@@ -30,10 +30,26 @@ Parody romance publishing house. Static site served from `index.html`.
 11. **Beekeeping romance** — "The Sweetest Sting" — Melissa Comb (3)
 12. **Forensic accounting romance** — "Cooking the Books" — Miles Ledger (3)
 
-Total: 12 series, 44 books.
+Total: 12 series, 43 books.
 
 ## Log
 - Init: empty repo, created notes + data model.
 - Review round 1: renamed publisher to **Ravish House**; replaced series 5, 6, 8, 9, 10
   (zoning, dog grooming, falconry, typewriter repair, bowling) with values/lifestyle/
   common-theme/fetish themes per feedback.
+- Built full bookstore: `scripts/build_site.py` generates `index.html` from `data.json`
+  (catalog inlined so it works from file:// too). Features: series grid, series pages
+  with author bios, book modals, add-to-cart drawer w/ localStorage, fake checkout.
+  Covers: real PNGs from `covers/<id>-<n>.png` when present, else themed CSS placeholder.
+
+## Cover image generation — BLOCKED
+- `scripts/gen_covers.py` is ready (gpt-image-2, size 1024x1536, quality=medium,
+  art-only prompts w/ per-series art direction; title/author overlaid by the site).
+- **BLOCKER:** this environment's egress policy denies `api.openai.com` — the agent
+  proxy returns HTTP 403 on CONNECT (policy denial, not a TLS/cert issue). Confirmed
+  via `curl $HTTPS_PROXY/__agentproxy/status` (recentRelayFailures: connect_rejected,
+  api.openai.com:443). Per proxy README, 403 = org egress policy; must be reported,
+  not worked around.
+- Options: (a) allowlist api.openai.com for this environment, then run
+  `OPENAI_API_KEY=... python3 scripts/gen_covers.py`; (b) run the generator locally
+  and commit the covers/ folder. Site auto-uses images once they land in covers/.

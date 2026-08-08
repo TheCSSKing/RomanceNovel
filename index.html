@@ -3,71 +3,345 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ravish House — Preview</title>
+<title>Ravish House — Love, in the unlikeliest places</title>
 <style>
-  :root { --ink:#2b2118; --paper:#f6efe3; --accent:#7a2e3a; --muted:#7c6f5e; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--paper); color:var(--ink);
-    font-family: Georgia, "Times New Roman", serif; line-height:1.5; }
-  header { text-align:center; padding:3rem 1.25rem 1.5rem; }
-  h1 { font-size:2.6rem; margin:0; letter-spacing:.5px; }
-  .tag { color:var(--accent); font-style:italic; margin-top:.5rem; }
-  .note { max-width:640px; margin:1rem auto 0; color:var(--muted); font-size:.9rem;
-    background:#fff8ec; border:1px dashed #d8c6a8; padding:.75rem 1rem; border-radius:6px; }
-  main { max-width:820px; margin:0 auto; padding:1rem 1.25rem 4rem; }
-  .count { text-align:center; color:var(--muted); margin:.5rem 0 2rem; }
-  ol { list-style:none; margin:0; padding:0; counter-reset:s; }
-  li { padding:1rem 0; border-bottom:1px solid #e4d8c4; counter-increment:s; }
-  li::before { content:counter(s) "."; color:var(--accent); font-weight:bold;
-    margin-right:.6rem; }
-  .series-title { font-size:1.25rem; font-weight:bold; }
-  .theme { color:var(--accent); font-style:italic; }
-  .meta { color:var(--muted); font-size:.92rem; margin-top:.15rem; }
-  footer { text-align:center; color:var(--muted); font-size:.85rem; padding:2rem 1rem; }
+  :root{
+    --ink:#241a15; --paper:#f7f1e6; --card:#fffdf8; --line:#e5d8c2;
+    --accent:#8a2f3f; --accent2:#b0475a; --muted:#7c6f5e; --gold:#b08d3f;
+    --shadow:0 8px 24px rgba(60,40,20,.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;line-height:1.55;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,241,230,.94);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .bar{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:1rem;
+    padding:.8rem 1.25rem;}
+  .brand{cursor:pointer;display:flex;flex-direction:column;line-height:1.1;}
+  .brand b{font-size:1.5rem;letter-spacing:.5px;}
+  .brand span{font-size:.78rem;color:var(--accent);font-style:italic;}
+  nav.top{margin-left:auto;display:flex;gap:1.2rem;align-items:center;}
+  nav.top a{font-size:.95rem;color:var(--muted);cursor:pointer;}
+  nav.top a:hover{color:var(--accent);}
+  .cartbtn{background:var(--accent);color:#fff;border:none;border-radius:999px;
+    padding:.5rem .95rem;font:inherit;font-size:.9rem;cursor:pointer;
+    display:flex;align-items:center;gap:.4rem;}
+  .cartbtn:hover{background:var(--accent2);}
+  .cartbtn .badge{background:#fff;color:var(--accent);border-radius:999px;
+    min-width:1.3rem;height:1.3rem;display:inline-flex;align-items:center;
+    justify-content:center;font-size:.78rem;font-weight:bold;padding:0 .3rem;}
+
+  .hero{max-width:1160px;margin:0 auto;padding:2.6rem 1.25rem 1rem;text-align:center;}
+  .hero h1{font-size:2.5rem;margin:.2rem 0;}
+  .hero p{color:var(--muted);max-width:680px;margin:.4rem auto 0;font-size:1.05rem;}
+  .rule{width:80px;height:3px;background:var(--gold);margin:1.2rem auto;border-radius:2px;}
+
+  main{max-width:1160px;margin:0 auto;padding:1rem 1.25rem 4rem;}
+  .section-title{font-size:1.5rem;margin:1.6rem 0 1rem;display:flex;align-items:baseline;gap:.6rem;}
+  .section-title small{color:var(--muted);font-size:.9rem;font-weight:normal;}
+
+  .grid{display:grid;gap:1.4rem;}
+  .series-grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}
+  .book-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
+
+  .series-card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s ease;
+    display:flex;flex-direction:column;}
+  .series-card:hover{transform:translateY(-4px);}
+  .series-card .banner{height:150px;position:relative;display:flex;align-items:center;
+    justify-content:center;font-size:3.4rem;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.35);}
+  .series-card .body{padding:.9rem 1rem 1.1rem;}
+  .series-card .theme{color:var(--accent);font-style:italic;font-size:.85rem;}
+  .series-card h3{margin:.2rem 0 .3rem;font-size:1.25rem;}
+  .series-card .by{color:var(--muted);font-size:.9rem;}
+  .series-card .count{margin-top:.5rem;font-size:.82rem;color:var(--gold);font-weight:bold;
+    text-transform:uppercase;letter-spacing:.5px;}
+
+  /* Book cover (image or placeholder), classic 2:3 */
+  .cover{position:relative;aspect-ratio:2/3;border-radius:8px;overflow:hidden;
+    box-shadow:var(--shadow);background:#ddd;}
+  .cover img{width:100%;height:100%;object-fit:cover;}
+  .cover .ph{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:space-between;padding:14% 10%;text-align:center;
+    color:#fff;}
+  .cover .ph .pub{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;opacity:.8;}
+  .cover .ph .emoji{font-size:2.6rem;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
+  .cover .ph .t{font-size:1.02rem;font-weight:bold;line-height:1.15;
+    text-shadow:0 2px 8px rgba(0,0,0,.45);}
+  .cover .ph .a{font-size:.7rem;font-style:italic;opacity:.9;}
+
+  .book{cursor:pointer;}
+  .book .meta{margin-top:.55rem;}
+  .book .bt{font-weight:bold;font-size:1rem;line-height:1.2;}
+  .book .bp{color:var(--accent);font-weight:bold;margin-top:.15rem;}
+
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:8px;
+    padding:.55rem .9rem;font:inherit;font-size:.9rem;cursor:pointer;width:100%;
+    margin-top:.5rem;}
+  .btn:hover{background:var(--accent2);}
+  .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+
+  /* Series page header */
+  .series-hero{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+    margin:1.2rem 0 1.6rem;color:#fff;position:relative;}
+  .series-hero .inner{padding:2rem 1.6rem;position:relative;z-index:1;}
+  .series-hero .emoji{font-size:3rem;}
+  .series-hero h2{font-size:2.1rem;margin:.3rem 0;}
+  .series-hero .theme{font-style:italic;opacity:.95;}
+  .series-hero .blurb{max-width:640px;margin-top:.7rem;opacity:.95;}
+  .series-hero .author{margin-top:1rem;font-size:.95rem;opacity:.92;}
+  .back{cursor:pointer;color:var(--muted);font-size:.9rem;display:inline-block;margin:.4rem 0;}
+  .back:hover{color:var(--accent);}
+
+  /* Modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(30,20,12,.55);z-index:100;
+    display:none;align-items:center;justify-content:center;padding:1.25rem;}
+  .modal-bg.show{display:flex;}
+  .modal{background:var(--card);border-radius:14px;max-width:760px;width:100%;
+    box-shadow:var(--shadow);max-height:90vh;overflow:auto;}
+  .modal .row{display:flex;gap:1.4rem;padding:1.5rem;}
+  .modal .row .cover{flex:0 0 200px;max-width:200px;}
+  .modal h3{margin:.1rem 0 .2rem;font-size:1.6rem;}
+  .modal .sub{color:var(--accent);font-style:italic;}
+  .modal .desc{margin:.9rem 0;}
+  .modal .price{font-size:1.4rem;color:var(--accent);font-weight:bold;}
+  .x{float:right;font-size:1.4rem;cursor:pointer;color:var(--muted);padding:.6rem 1rem 0;}
+
+  /* Cart drawer */
+  .drawer-bg{position:fixed;inset:0;background:rgba(30,20,12,.45);z-index:110;display:none;}
+  .drawer-bg.show{display:block;}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,92vw);background:var(--card);
+    z-index:120;box-shadow:-8px 0 30px rgba(0,0,0,.2);transform:translateX(100%);
+    transition:transform .22s ease;display:flex;flex-direction:column;}
+  .drawer.show{transform:translateX(0);}
+  .drawer h3{margin:0;padding:1.1rem 1.25rem;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;}
+  .drawer .items{flex:1;overflow:auto;padding:.5rem 1.25rem;}
+  .citem{display:flex;gap:.75rem;padding:.7rem 0;border-bottom:1px solid var(--line);align-items:center;}
+  .citem .mini{width:44px;height:66px;border-radius:4px;flex:0 0 auto;box-shadow:var(--shadow);
+    display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;overflow:hidden;}
+  .citem .mini img{width:100%;height:100%;object-fit:cover;}
+  .citem .info{flex:1;font-size:.9rem;}
+  .citem .rm{cursor:pointer;color:var(--muted);font-size:1.1rem;}
+  .citem .rm:hover{color:var(--accent);}
+  .drawer .foot{border-top:1px solid var(--line);padding:1.1rem 1.25rem;}
+  .drawer .total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:bold;margin-bottom:.8rem;}
+  .empty{color:var(--muted);text-align:center;padding:2rem 1rem;}
+
+  .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(200%);
+    background:var(--ink);color:#fff;padding:.75rem 1.25rem;border-radius:999px;z-index:200;
+    transition:transform .3s ease;font-size:.95rem;box-shadow:var(--shadow);}
+  .toast.show{transform:translateX(-50%) translateY(0);}
+
+  footer.site{border-top:1px solid var(--line);color:var(--muted);text-align:center;
+    padding:2rem 1rem;font-size:.85rem;}
+  .disclaimer{max-width:640px;margin:.6rem auto 0;font-size:.78rem;opacity:.8;}
 </style>
 </head>
 <body>
-  <header>
-    <h1>Ravish House</h1>
-    <div class="tag">Love, in the unlikeliest places.</div>
-    <div class="note">
-      <strong>Preview build.</strong> This minimal page lists the house and its series for review.
-      Book covers and the full browsable bookstore come next, after sign-off.
+<header class="site">
+  <div class="bar">
+    <div class="brand" onclick="go('#/')">
+      <b>Ravish House</b><span>Love, in the unlikeliest places.</span>
     </div>
-  </header>
-  <main>
-    <div class="count" id="count"></div>
-    <ol id="series"></ol>
-  </main>
-  <footer>&copy; 1987–2026 Ravish House. All passions reserved.</footer>
+    <nav class="top">
+      <a onclick="go('#/')">Home</a>
+      <a onclick="go('#/'); setTimeout(()=>document.getElementById('catalog').scrollIntoView(),40)">Catalog</a>
+      <button class="cartbtn" onclick="openCart()">🛒 Cart <span class="badge" id="cartCount">0</span></button>
+    </nav>
+  </div>
+</header>
 
+<div id="view"></div>
+
+<footer class="site">
+  &copy; 1987–2026 Ravish House. All passions reserved.
+  <div class="disclaimer">
+    Ravish House is a work of parody. All series, authors, titles, and books are
+    fictional and satirical. Nothing here is for actual sale; the "checkout" is
+    part of the joke.
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal"></div>
+</div>
+
+<!-- Cart -->
+<div class="drawer-bg" id="drawerBg" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <h3>Your Cart <span class="x" onclick="closeCart()">&times;</span></h3>
+  <div class="items" id="cartItems"></div>
+  <div class="foot">
+    <div class="total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <button class="btn" onclick="checkout()">Checkout</button>
+    <button class="btn ghost" onclick="clearCart()" style="margin-top:.5rem;">Clear cart</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script id="catalog" type="application/json">{"publisher": {"name": "Ravish House", "tagline": "Love, in the unlikeliest places.", "about": "Ravish House publishes love stories that no one asked for and everyone secretly wants. Our authors chase passion into the strangest corners of human life \u2014 down to crush depth, out to the edge of the caldera, deep into the compost heap. Every heart in our catalog beats against a backdrop no other publisher would dare."}, "series": [{"id": "love-by-the-numbers", "title": "Love by the Numbers", "theme": "Actuarial romance", "author": "Prudence Everdeath", "authorBio": "Prudence Everdeath, FSA, spent nineteen years pricing catastrophe reinsurance before discovering that the greatest risk of all is the human heart. She lives in Hartford with two cats, both fully indemnified.", "blurb": "In the high-stakes world of long-term liability, two actuaries discover that some probabilities are worth betting your whole life on.", "books": [{"title": "Present Value", "description": "When Diana models his mortality curve, she never expects the discount rate of her own heart to plummet. A slow-burn romance across three quarterly board meetings.", "price": 4.99, "cover": "covers/love-by-the-numbers-1.png", "n": 1}, {"title": "Confidence Interval", "description": "He was 95% certain he'd never love again. She was the outlier that broke the model. A tale of two analysts and one very significant p-value.", "price": 4.99, "cover": "covers/love-by-the-numbers-2.png", "n": 2}, {"title": "The Deductible", "description": "Some things you can't insure against. Like the way he says 'mortality table.' A steamy office romance with full actuarial rigor.", "price": 5.99, "cover": "covers/love-by-the-numbers-3.png", "n": 3}, {"title": "Terminal Dividend", "description": "The series finale. As the pension fund matures, so does a love thirty years in the making. Bring tissues and a financial calculator.", "price": 6.99, "cover": "covers/love-by-the-numbers-4.png", "n": 4}], "c1": "#0f4c5c", "c2": "#e9c46a", "emoji": "\ud83d\udcca"}, {"id": "fathoms-of-the-heart", "title": "Fathoms of the Heart", "theme": "Submarine romance", "author": "Marina Deeps", "authorBio": "Marina Deeps served eleven years aboard nuclear submarines and now writes from a windowless room by choice. She insists it helps her concentrate.", "blurb": "Two hundred meters down, in a steel tube where no one can hear you sigh, the pressure to fall in love becomes unbearable.", "books": [{"title": "Silent Running", "description": "Rule one of the silent service: no sudden movements. Rule two: do not fall for the sonar officer. Commander Hale is about to break both.", "price": 4.99, "cover": "covers/fathoms-of-the-heart-1.png", "n": 1}, {"title": "Crush Depth", "description": "The deeper they dive, the harder his heart pounds. When the hull groans, so does her resolve. A romance under unimaginable pressure.", "price": 5.99, "cover": "covers/fathoms-of-the-heart-2.png", "n": 2}, {"title": "Periscope Up", "description": "After six months submerged, she surfaces to find the one thing she can't leave below. A tender reunion novel with authentic ballast.", "price": 5.99, "cover": "covers/fathoms-of-the-heart-3.png", "n": 3}], "c1": "#02182b", "c2": "#2a9d8f", "emoji": "\u2693"}, {"id": "rind-and-the-reckless", "title": "The Rind & the Reckless", "theme": "Competitive cheese-making romance", "author": "Colby Jack Sterling", "authorBio": "Colby Jack Sterling is a three-time regional affineur of the year and a lifelong believer that the way to anyone's heart is a properly aged Gruy\u00e8re.", "blurb": "In the cutthroat world of artisanal cheese competition, two rival makers discover that love, like a good Camembert, cannot be rushed.", "books": [{"title": "The Washed Rind", "description": "Her \u00c9poisses was disqualified for being too seductive. His raw-milk cheddar has never lost. Sparks fly at the National Curd Championships.", "price": 4.99, "cover": "covers/rind-and-the-reckless-1.png", "n": 1}, {"title": "Aged to Perfection", "description": "Eighteen months in the cave changes a cheese. And a man. A second-chance romance with notes of hay, hazelnut, and heartbreak.", "price": 5.99, "cover": "covers/rind-and-the-reckless-2.png", "n": 2}, {"title": "Say Cheese", "description": "The wedding-cheese-cake commission of a lifetime forces two rivals into one very small aging room. Things get warm. And funky.", "price": 5.99, "cover": "covers/rind-and-the-reckless-3.png", "n": 3}, {"title": "Reserve", "description": "The finale. As their signature blend takes gold, they finally admit what everyone at the co-op already knew.", "price": 6.99, "cover": "covers/rind-and-the-reckless-4.png", "n": 4}, {"title": "The Whey Home", "description": "A holiday novella. Snowed in at the creamery on Christmas Eve, with only a wheel of Stilton and each other for warmth.", "price": 3.99, "cover": "covers/rind-and-the-reckless-5.png", "n": 5}], "c1": "#8a5a00", "c2": "#f4d58d", "emoji": "\ud83e\uddc0"}, {"id": "below-zero-above-reason", "title": "Below Zero, Above Reason", "theme": "Antarctic research-station romance", "author": "Dr. Ptarmigan Frost", "authorBio": "Dr. Ptarmigan Frost overwintered at McMurdo four times before deciding the only thing colder than the continent was her ex. She writes to stay warm.", "blurb": "Six months of darkness. Fourteen scientists. One thermostat war that becomes something much, much hotter.", "books": [{"title": "The Long Night", "description": "When the sun sets for the winter, the station's glaciologist and its cranky HVAC engineer discover the only heat source that matters.", "price": 4.99, "cover": "covers/below-zero-above-reason-1.png", "n": 1}, {"title": "Core Sample", "description": "Two miles of ancient ice hold secrets. So does the man in the next Quonset hut. A romance drilled from the deep past.", "price": 5.99, "cover": "covers/below-zero-above-reason-2.png", "n": 2}, {"title": "Windchill", "description": "The finale. As the resupply plane finally lands, she must choose between the mainland and the man who kept her warm at minus sixty.", "price": 6.99, "cover": "covers/below-zero-above-reason-3.png", "n": 3}], "c1": "#1b3a5b", "c2": "#a8e0e6", "emoji": "\u2744\ufe0f"}, {"id": "leave-no-trace", "title": "Leave No Trace", "theme": "Aggressively zero-waste romance", "author": "Fern Compostella", "authorBio": "Fern Compostella has not produced a bag of landfill waste since 2009. She composts her own first drafts and knits her author photos from ethically shorn alpaca. She would prefer you read this bio and then forget it, to save the electrons.", "blurb": "Two militant zero-wasters, one shared compost heap, and a carbon footprint so small it can barely hold the weight of what they feel.", "books": [{"title": "Reduce", "description": "She'd whittled her life down to a single jar of annual trash. Then he moved in next door with a reusable everything and a smile she couldn't recycle away.", "price": 4.99, "cover": "covers/leave-no-trace-1.png", "n": 1}, {"title": "Reuse", "description": "An old flame, refurbished. When her college sweetheart turns up at the repair caf\u00e9, she learns that some hearts are too good to throw out.", "price": 5.99, "cover": "covers/leave-no-trace-2.png", "n": 2}, {"title": "Recycle", "description": "The finale. At the regional Zero-Waste Championship, two soulmates prove that the greenest thing you can do is never, ever give up on love.", "price": 6.99, "cover": "covers/leave-no-trace-3.png", "n": 3}], "c1": "#2d5016", "c2": "#9bc53d", "emoji": "\u267b\ufe0f"}, {"id": "nothing-matters", "title": "Nothing Matters", "theme": "Nihilist romance", "author": "S\u00f8ren Blank", "authorBio": "S\u00f8ren Blank writes from an unfurnished apartment because the furniture, like everything else, was ultimately meaningless. He is not sure why you are reading this. He is not sure why he wrote it. And yet, here we both are.", "blurb": "In a universe of cold, indifferent stars, two people who believe in absolutely nothing accidentally believe in each other.", "books": [{"title": "The Void Between Us", "description": "He stared into the abyss for years and felt nothing. Then she sat down at his table and, inexplicably, the abyss stared back with her eyes.", "price": 4.99, "cover": "covers/nothing-matters-1.png", "n": 1}, {"title": "Nothing to Lose", "description": "If existence is meaningless, she reasons, she may as well kiss him. A darkly funny romance about doing it anyway.", "price": 5.99, "cover": "covers/nothing-matters-2.png", "n": 2}, {"title": "Amor Fati", "description": "Love your fate, the philosophers said. She never expected her fate to have such good forearms.", "price": 5.99, "cover": "covers/nothing-matters-3.png", "n": 3}, {"title": "The Heat Death of the Heart", "description": "The finale. Entropy comes for all things, even them. Especially them. But not, it turns out, tonight.", "price": 6.99, "cover": "covers/nothing-matters-4.png", "n": 4}], "c1": "#161320", "c2": "#6c5b7b", "emoji": "\ud83c\udf0c"}, {"id": "magma-rising", "title": "Magma Rising", "theme": "Volcanology romance", "author": "Ignatia Cinders", "authorBio": "Ignatia Cinders has stood at the rim of more active calderas than she can count. She measures love, like lava, in viscosity and inevitability.", "blurb": "She reads the mountain's every tremor. He reads her. When the volcano finally blows, so does every ounce of restraint between them.", "books": [{"title": "Pyroclastic", "description": "The evacuation order came at dawn. The confession came at the summit. A fast-moving romance you cannot outrun.", "price": 4.99, "cover": "covers/magma-rising-1.png", "n": 1}, {"title": "The Lava Tube", "description": "Trapped underground as the eruption begins, two rival geologists have only their headlamps and their undeniable chemistry.", "price": 5.99, "cover": "covers/magma-rising-2.png", "n": 2}, {"title": "Dormant No More", "description": "He'd been quiet for years. Then she recalibrated his seismometer \u2014 and everything else. A reawakening in four parts.", "price": 5.99, "cover": "covers/magma-rising-3.png", "n": 3}, {"title": "Effusive", "description": "The finale. As the mountain finally settles, their love overflows its banks. Endorsed by no actual geological survey.", "price": 6.99, "cover": "covers/magma-rising-4.png", "n": 4}], "c1": "#3b0d0c", "c2": "#ff6d00", "emoji": "\ud83c\udf0b"}, {"id": "bunker-down", "title": "Bunker Down", "theme": "Doomsday-prepper romance", "author": "Dakota Ridge", "authorBio": "Dakota Ridge has enough freeze-dried lasagna to outlast three civilizations and a bug-out plan for every letter of the alphabet. She wrote this series by hand-crank lamp, just in case.", "blurb": "When the world is ending \u2014 and to them, it is always ending \u2014 the only thing worth stockpiling is each other.", "books": [{"title": "Bug-Out Bag", "description": "She had a plan for every catastrophe except the handsome stranger who showed up at her homestead with better MREs and worse intentions.", "price": 4.99, "cover": "covers/bunker-down-1.png", "n": 1}, {"title": "Canned Goods", "description": "Fifteen years of shelf life, one very short fuse. Riding out a false alarm in a two-person bunker turns out to be dangerously cozy.", "price": 5.99, "cover": "covers/bunker-down-2.png", "n": 2}, {"title": "Fallout", "description": "The sirens were a drill. The feelings were not. A romance about what you keep when you think you've lost everything.", "price": 5.99, "cover": "covers/bunker-down-3.png", "n": 3}, {"title": "The All-Clear", "description": "The finale. The world, annoyingly, refuses to end \u2014 leaving two survivalists to face the scariest scenario of all: a future together.", "price": 6.99, "cover": "covers/bunker-down-4.png", "n": 4}], "c1": "#2b2b1f", "c2": "#c9a227", "emoji": "\u2622\ufe0f"}, {"id": "between-the-flags", "title": "Between the Flags", "theme": "Lifeguard romance, one body of water at a time", "author": "Sandy Shores", "authorBio": "Sandy Shores has guarded every kind of water there is \u2014 chlorinated, brackish, glacial, and artificially wave-generated. She has saved four hundred swimmers and, she'll admit, one or two hearts.", "blurb": "Different water, same rescue. Across pools, lakes, oceans, and one very aggressive wave machine, love keeps pulling people back to the surface.", "books": [{"title": "The Deep End", "description": "Book one: the pool. The stern head guard runs the tightest municipal aquatic center in the state \u2014 until a reckless new hire dives straight past every rule she's got.", "price": 4.99, "cover": "covers/between-the-flags-1.png", "n": 1}, {"title": "Still Waters", "description": "Book two: the lake. Beneath a calm summer surface, an old rivalry and a slow current pull two camp lifeguards toward the same dock.", "price": 5.99, "cover": "covers/between-the-flags-2.png", "n": 2}, {"title": "Riptide", "description": "Book three: the ocean. On a treacherous stretch of coast, a burned-out veteran guard and a fearless rookie learn that the strongest pull isn't the tide.", "price": 5.99, "cover": "covers/between-the-flags-3.png", "n": 3}, {"title": "The Wave Pool", "description": "The finale: the wave pool. At the world's largest indoor water park, artificial swells throw two very real hearts together, every ninety seconds, on the dot.", "price": 6.99, "cover": "covers/between-the-flags-4.png", "n": 4}], "c1": "#005f73", "c2": "#ffd166", "emoji": "\ud83d\udedf"}, {"id": "not-a-minute-late", "title": "Not a Minute Late", "theme": "Punctuality-fetish romance", "author": "Dot Sharpe", "authorBio": "Dot Sharpe has never been late to anything, including her own book launches, which begin at the stroke of the hour whether or not anyone has arrived. She finds tardiness unbearable and precision intoxicating.", "blurb": "For a rare few, nothing quickens the pulse like a train that departs exactly on time. This is a love story for people who arrive early \u2014 and finish on schedule.", "books": [{"title": "On the Dot", "description": "He arrived for their first date four minutes early and she nearly swooned on the spot. A slow-burn romance timed to the second.", "price": 4.99, "cover": "covers/not-a-minute-late-1.png", "n": 1}, {"title": "Synchronized", "description": "Two watches, one heartbeat. When their calendars align perfectly for the first time, the tension becomes almost too much to schedule.", "price": 5.99, "cover": "covers/not-a-minute-late-2.png", "n": 2}, {"title": "Right on Time", "description": "The finale. At the grand reopening of the world's most accurate clock, two sticklers discover that the best moment to say 'I love you' is precisely now.", "price": 6.99, "cover": "covers/not-a-minute-late-3.png", "n": 3}], "c1": "#1d2d44", "c2": "#b08968", "emoji": "\u23f1\ufe0f"}, {"id": "sweetest-sting", "title": "The Sweetest Sting", "theme": "Beekeeping romance", "author": "Melissa Comb", "authorBio": "Melissa Comb keeps forty hives and has been stung more times than she can count, though she maintains that none hurt quite like the first time she saw him in a veil.", "blurb": "Where the hum of the hive fills the summer air, two apiarists learn that the sweetest things in life are the ones worth a little sting.", "books": [{"title": "Smoke & Honey", "description": "Her queen absconded the same week the handsome new beekeeper moved in next door. Coincidence? The bees seem to think not.", "price": 4.99, "cover": "covers/sweetest-sting-1.png", "n": 1}, {"title": "The Swarm", "description": "When ten thousand bees settle in the wrong tree, two rival keepers must work as one. Suits come off eventually. Metaphorically. Mostly.", "price": 5.99, "cover": "covers/sweetest-sting-2.png", "n": 2}, {"title": "Requeened", "description": "The finale. As the honey harvest comes in golden and heavy, a heart long thought colony-collapsed finally finds its queen.", "price": 6.99, "cover": "covers/sweetest-sting-3.png", "n": 3}], "c1": "#7a5901", "c2": "#ffd60a", "emoji": "\ud83d\udc1d"}, {"id": "cooking-the-books", "title": "Cooking the Books", "theme": "Forensic accounting romance", "author": "Miles Ledger", "authorBio": "Miles Ledger, CPA, CFE, has traced more shell companies than he's had hot dinners. He maintains that a well-reconciled ledger is the most romantic document ever devised.", "blurb": "Where the numbers don't add up, two forensic accountants follow the money \u2014 straight into each other's arms.", "books": [{"title": "Material Misstatement", "description": "She flagged the discrepancy. He signed off on the audit. Now they're locked in a conference room until one of them confesses \u2014 to the fraud, and to everything else.", "price": 4.99, "cover": "covers/cooking-the-books-1.png", "n": 1}, {"title": "Off the Books", "description": "A midnight deposition, a missing $4 million, and two investigators who can't stop crossing lines. Fully deductible passion.", "price": 5.99, "cover": "covers/cooking-the-books-2.png", "n": 2}, {"title": "The Reconciliation", "description": "The finale. When the biggest embezzlement case of the decade goes to trial, two hearts finally balance to the penny.", "price": 6.99, "cover": "covers/cooking-the-books-3.png", "n": 3}], "c1": "#14261a", "c2": "#4caf50", "emoji": "\ud83d\udcd2"}]}</script>
 <script>
-// Minimal, self-contained summary for review (full details live in data.json).
-const SERIES = [
-  ["Love by the Numbers","Actuarial romance","Prudence Everdeath",4],
-  ["Fathoms of the Heart","Submarine romance","Marina Deeps",3],
-  ["The Rind & the Reckless","Competitive cheese-making romance","Colby Jack Sterling",5],
-  ["Below Zero, Above Reason","Antarctic research-station romance","Dr. Ptarmigan Frost",3],
-  ["Leave No Trace","Aggressively zero-waste romance","Fern Compostella",3],
-  ["Nothing Matters","Nihilist romance","Søren Blank",4],
-  ["Magma Rising","Volcanology romance","Ignatia Cinders",4],
-  ["Bunker Down","Doomsday-prepper romance","Dakota Ridge",4],
-  ["Between the Flags","Lifeguard romance, one body of water at a time","Sandy Shores",4],
-  ["Not a Minute Late","Punctuality-fetish romance","Dot Sharpe",3],
-  ["The Sweetest Sting","Beekeeping romance","Melissa Comb",3],
-  ["Cooking the Books","Forensic accounting romance","Miles Ledger",3],
-];
-const ol = document.getElementById("series");
-let total = 0;
-for (const [title, theme, author, n] of SERIES) {
-  total += n;
-  const li = document.createElement("li");
-  li.innerHTML = `<span class="series-title">${title}</span> — <span class="theme">${theme}</span>
-    <div class="meta">by ${author} · ${n} book${n>1?"s":""}</div>`;
-  ol.appendChild(li);
+const CATALOG = JSON.parse(document.getElementById('catalog').textContent);
+const SERIES = CATALOG.series;
+const byId = Object.fromEntries(SERIES.map(s=>[s.id,s]));
+const fmt = n => '$'+n.toFixed(2);
+
+/* ---------- cover rendering (image with placeholder fallback) ---------- */
+function coverHTML(s, b){
+  const ph = `<div class="ph" style="background:linear-gradient(160deg,${s.c1},${s.c2})">
+      <div class="pub">Ravish House</div>
+      <div class="emoji">${s.emoji}</div>
+      <div class="t">${esc(b.title)}</div>
+      <div class="a">${esc(s.author)}</div>
+    </div>`;
+  return `<div class="cover">
+     <img src="${b.cover}" alt="${esc(b.title)} cover" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+     <div style="display:none">${ph}</div>
+   </div>`;
 }
-document.getElementById("count").textContent =
-  `${SERIES.length} series · ${total} books`;
+function miniHTML(s,b){
+  return `<div class="mini" style="background:linear-gradient(160deg,${s.c1},${s.c2})">
+    <img src="${b.cover}" alt="" onerror="this.replaceWith(document.createTextNode('${s.emoji}'))">
+  </div>`;
+}
+function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ---------- views ---------- */
+function homeView(){
+  const totalBooks = SERIES.reduce((a,s)=>a+s.books.length,0);
+  const cards = SERIES.map(s=>`
+    <div class="series-card" onclick="go('#/series/${s.id}')">
+      <div class="banner" style="background:linear-gradient(160deg,${s.c1},${s.c2})">${s.emoji}</div>
+      <div class="body">
+        <div class="theme">${esc(s.theme)}</div>
+        <h3>${esc(s.title)}</h3>
+        <div class="by">by ${esc(s.author)}</div>
+        <div class="count">${s.books.length} book${s.books.length>1?'s':''}</div>
+      </div>
+    </div>`).join('');
+  return `
+    <section class="hero">
+      <h1>${esc(CATALOG.publisher.name)}</h1>
+      <p>${esc(CATALOG.publisher.tagline)}</p>
+      <div class="rule"></div>
+      <p>${esc(CATALOG.publisher.about)}</p>
+    </section>
+    <main>
+      <div class="section-title" id="catalog">Our Series <small>${SERIES.length} series · ${totalBooks} books</small></div>
+      <div class="grid series-grid">${cards}</div>
+    </main>`;
+}
+
+function seriesView(id){
+  const s = byId[id];
+  if(!s) return homeView();
+  const books = s.books.map(b=>`
+    <div class="book" onclick="openBook('${s.id}',${b.n})">
+      ${coverHTML(s,b)}
+      <div class="meta">
+        <div class="bt">${esc(b.title)}</div>
+        <div class="bp">${fmt(b.price)}</div>
+      </div>
+      <button class="btn" onclick="event.stopPropagation();addToCart('${s.id}',${b.n})">Add to Cart</button>
+    </div>`).join('');
+  return `
+    <main>
+      <div class="back" onclick="go('#/')">&larr; All series</div>
+      <div class="series-hero">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,${s.c1},${s.c2})"></div>
+        <div class="inner">
+          <div class="emoji">${s.emoji}</div>
+          <div class="theme">${esc(s.theme)}</div>
+          <h2>${esc(s.title)}</h2>
+          <div class="blurb">${esc(s.blurb)}</div>
+          <div class="author"><strong>${esc(s.author)}</strong> — ${esc(s.authorBio)}</div>
+        </div>
+      </div>
+      <div class="section-title">Books in this series <small>${s.books.length} title${s.books.length>1?'s':''}</small></div>
+      <div class="grid book-grid">${books}</div>
+    </main>`;
+}
+
+/* ---------- book modal ---------- */
+function openBook(sid,n){
+  const s=byId[sid], b=s.books[n-1];
+  document.getElementById('modal').innerHTML = `
+    <span class="x" onclick="closeModal()">&times;</span>
+    <div class="row">
+      <div style="flex:0 0 200px;max-width:200px">${coverHTML(s,b)}</div>
+      <div style="flex:1">
+        <div class="sub">${esc(s.title)} · ${esc(s.theme)}</div>
+        <h3>${esc(b.title)}</h3>
+        <div class="by" style="color:var(--muted)">by ${esc(s.author)}</div>
+        <div class="desc">${esc(b.description)}</div>
+        <div class="price">${fmt(b.price)}</div>
+        <button class="btn" onclick="addToCart('${sid}',${n});closeModal()">Add to Cart</button>
+      </div>
+    </div>`;
+  document.getElementById('modalBg').classList.add('show');
+}
+function closeModal(){document.getElementById('modalBg').classList.remove('show');}
+
+/* ---------- cart ---------- */
+let cart = load();
+function load(){try{return JSON.parse(localStorage.getItem('rh_cart')||'[]')}catch(e){return[]}}
+function save(){localStorage.setItem('rh_cart',JSON.stringify(cart));renderCart();}
+function key(sid,n){return sid+'-'+n;}
+function addToCart(sid,n){
+  const k=key(sid,n); const ex=cart.find(i=>i.k===k);
+  if(ex) ex.q++; else cart.push({k,sid,n,q:1});
+  save(); toast('Added to cart 💕');
+}
+function removeItem(k){cart=cart.filter(i=>i.k!==k);save();}
+function clearCart(){cart=[];save();}
+function cartTotal(){return cart.reduce((a,i)=>{const b=byId[i.sid].books[i.n-1];return a+b.price*i.q;},0);}
+function renderCart(){
+  document.getElementById('cartCount').textContent = cart.reduce((a,i)=>a+i.q,0);
+  document.getElementById('cartTotal').textContent = fmt(cartTotal());
+  const el=document.getElementById('cartItems');
+  if(!cart.length){el.innerHTML='<div class="empty">Your cart is empty.<br>So much improbable love awaits.</div>';return;}
+  el.innerHTML = cart.map(i=>{
+    const s=byId[i.sid], b=s.books[i.n-1];
+    return `<div class="citem">
+      ${miniHTML(s,b)}
+      <div class="info"><strong>${esc(b.title)}</strong><br>
+        <span style="color:var(--muted)">${esc(s.title)}</span><br>
+        ${fmt(b.price)} × ${i.q}</div>
+      <div class="rm" onclick="removeItem('${i.k}')" title="Remove">&times;</div>
+    </div>`;
+  }).join('');
+}
+function openCart(){document.getElementById('drawer').classList.add('show');document.getElementById('drawerBg').classList.add('show');}
+function closeCart(){document.getElementById('drawer').classList.remove('show');document.getElementById('drawerBg').classList.remove('show');}
+function checkout(){
+  if(!cart.length){toast('Add a book first! 📚');return;}
+  const n=cart.reduce((a,i)=>a+i.q,0), t=fmt(cartTotal());
+  cart=[];save();closeCart();
+  toast(`💌 Order placed! ${n} book${n>1?'s':''} · ${t}. Your improbable passions are on the way.`);
+}
+
+/* ---------- toast + routing ---------- */
+let toastT;
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove('show'),2600);}
+function go(hash){location.hash=hash;}
+function render(){
+  const h=location.hash||'#/';
+  const m=h.match(/^#\/series\/(.+)$/);
+  document.getElementById('view').innerHTML = m?seriesView(decodeURIComponent(m[1])):homeView();
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',render);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();}});
+render();renderCart();
 </script>
 </body>
 </html>
