@@ -1,8 +1,8 @@
 {
   "publisher": {
-    "name": "Swoon & Sons, Publishers",
-    "tagline": "Purveyors of Fine Improbable Passions Since 1987",
-    "about": "For nearly four decades, Swoon & Sons has proudly proved that love finds a way — even in the most statistically improbable, mechanically obscure, and professionally niche corners of human endeavor. Our authors write what they know, whether that is reinsurance treaties or the correct pH for a washed-rind cheese. Every heart in our catalog beats against a backdrop no other publisher would dare."
+    "name": "Ravish House",
+    "tagline": "Love, in the unlikeliest places.",
+    "about": "Ravish House publishes love stories that no one asked for and everyone secretly wants. Our authors chase passion into the strangest corners of human life — down to crush depth, out to the edge of the caldera, deep into the compost heap. Every heart in our catalog beats against a backdrop no other publisher would dare."
   },
   "series": [
     {
@@ -61,29 +61,30 @@
       ]
     },
     {
-      "id": "variance-of-the-heart",
-      "title": "Variance of the Heart",
-      "theme": "Municipal zoning-board romance",
-      "author": "Reginald P. Setback",
-      "authorBio": "Reginald P. Setback served twenty-two years on the Planning & Zoning Commission of a mid-sized municipality. He has never missed a public comment period, and he never will.",
-      "blurb": "Public hearings run late. Passions run later. In the fluorescent glow of the municipal annex, love applies for a permit.",
+      "id": "leave-no-trace",
+      "title": "Leave No Trace",
+      "theme": "Aggressively zero-waste romance",
+      "author": "Fern Compostella",
+      "authorBio": "Fern Compostella has not produced a bag of landfill waste since 2009. She composts her own first drafts and knits her author photos from ethically shorn alpaca. She would prefer you read this bio and then forget it, to save the electrons.",
+      "blurb": "Two militant zero-wasters, one shared compost heap, and a carbon footprint so small it can barely hold the weight of what they feel.",
       "books": [
-        { "title": "Setback Requirements", "description": "She wants a variance for her mixed-use development. He's the commissioner who keeps saying no. A slow-burn romance with a 45-day comment period.", "price": 4.99 },
-        { "title": "Grandfathered In", "description": "Their love was non-conforming from the start. Now the ordinance has changed. Can an old flame be brought up to code?", "price": 5.99 },
-        { "title": "The Public Hearing", "description": "The finale. Everything comes to a head at the biggest rezoning vote in county history. Motion to approve — the heart.", "price": 6.99 }
+        { "title": "Reduce", "description": "She'd whittled her life down to a single jar of annual trash. Then he moved in next door with a reusable everything and a smile she couldn't recycle away.", "price": 4.99 },
+        { "title": "Reuse", "description": "An old flame, refurbished. When her college sweetheart turns up at the repair café, she learns that some hearts are too good to throw out.", "price": 5.99 },
+        { "title": "Recycle", "description": "The finale. At the regional Zero-Waste Championship, two soulmates prove that the greenest thing you can do is never, ever give up on love.", "price": 6.99 }
       ]
     },
     {
-      "id": "clipped-and-smitten",
-      "title": "Clipped & Smitten",
-      "theme": "Competitive dog-grooming romance",
-      "author": "Bianca Fluffington",
-      "authorBio": "Bianca Fluffington has taken Best in Show at grooming championships on three continents. Her poodles have their own agents. She writes between competitions, usually smelling faintly of finishing spray.",
-      "blurb": "In the glittering, hairspray-choked arena of championship dog grooming, two stylists learn that the best cut of all is the one that opens your heart.",
+      "id": "nothing-matters",
+      "title": "Nothing Matters",
+      "theme": "Nihilist romance",
+      "author": "Søren Blank",
+      "authorBio": "Søren Blank writes from an unfurnished apartment because the furniture, like everything else, was ultimately meaningless. He is not sure why you are reading this. He is not sure why he wrote it. And yet, here we both are.",
+      "blurb": "In a universe of cold, indifferent stars, two people who believe in absolutely nothing accidentally believe in each other.",
       "books": [
-        { "title": "Best in Show", "description": "Her continental poodle clip is flawless. His Asian fusion styling is the talk of the circuit. At the national finals, only one can win — but maybe both can lose their hearts.", "price": 4.99 },
-        { "title": "The Finishing Spray", "description": "One canister. Two rivals. A backstage romance that gets stickier by the minute. Includes a shocking scissor-work betrayal.", "price": 5.99 },
-        { "title": "Groomed for Love", "description": "The finale. As the ribbons are handed out, a decade-long rivalry finally gives way to something softer than a freshly blown-out coat.", "price": 6.99 }
+        { "title": "The Void Between Us", "description": "He stared into the abyss for years and felt nothing. Then she sat down at his table and, inexplicably, the abyss stared back with her eyes.", "price": 4.99 },
+        { "title": "Nothing to Lose", "description": "If existence is meaningless, she reasons, she may as well kiss him. A darkly funny romance about doing it anyway.", "price": 5.99 },
+        { "title": "Amor Fati", "description": "Love your fate, the philosophers said. She never expected her fate to have such good forearms.", "price": 5.99 },
+        { "title": "The Heat Death of the Heart", "description": "The finale. Entropy comes for all things, even them. Especially them. But not, it turns out, tonight.", "price": 6.99 }
       ]
     },
     {
@@ -101,43 +102,44 @@
       ]
     },
     {
-      "id": "under-his-hood",
-      "title": "Under His Hood",
-      "theme": "Medieval falconry romance",
-      "author": "Lady Merlin de Jesses",
-      "authorBio": "Lady Merlin de Jesses is a master falconer and reenactor who has never once broken character during a book signing. Do not approach her gauntlet uninvited.",
-      "blurb": "In a windswept castle mews, a lowborn austringer and a highborn lady discover a bond as fierce and untamable as the birds they fly.",
+      "id": "bunker-down",
+      "title": "Bunker Down",
+      "theme": "Doomsday-prepper romance",
+      "author": "Dakota Ridge",
+      "authorBio": "Dakota Ridge has enough freeze-dried lasagna to outlast three civilizations and a bug-out plan for every letter of the alphabet. She wrote this series by hand-crank lamp, just in case.",
+      "blurb": "When the world is ending — and to them, it is always ending — the only thing worth stockpiling is each other.",
       "books": [
-        { "title": "The Jesses", "description": "He taught her to fly a goshawk. She taught him that some hearts refuse the hood. A forbidden romance across the class divide.", "price": 4.99 },
-        { "title": "Cast Off the Fist", "description": "When the king's peregrine goes missing, two falconers must ride together through the borderlands — and toward each other.", "price": 5.99 },
-        { "title": "Manned", "description": "To 'man' a hawk is to earn its trust through patience. She would spend a hundred nights doing the same for him.", "price": 5.99 },
-        { "title": "Bated Breath", "description": "The finale. As the great autumn hunt approaches, a secret betrothal threatens to clip their wings forever.", "price": 6.99 }
+        { "title": "Bug-Out Bag", "description": "She had a plan for every catastrophe except the handsome stranger who showed up at her homestead with better MREs and worse intentions.", "price": 4.99 },
+        { "title": "Canned Goods", "description": "Fifteen years of shelf life, one very short fuse. Riding out a false alarm in a two-person bunker turns out to be dangerously cozy.", "price": 5.99 },
+        { "title": "Fallout", "description": "The sirens were a drill. The feelings were not. A romance about what you keep when you think you've lost everything.", "price": 5.99 },
+        { "title": "The All-Clear", "description": "The finale. The world, annoyingly, refuses to end — leaving two survivalists to face the scariest scenario of all: a future together.", "price": 6.99 }
       ]
     },
     {
-      "id": "return-of-the-carriage",
-      "title": "Return of the Carriage",
-      "theme": "Artisanal typewriter-repair romance",
-      "author": "Quentin Underwood",
-      "authorBio": "Quentin Underwood restores manual typewriters in a shop that smells of oil and ribbon ink. He wrote every one of these books on a 1948 Royal Quiet De Luxe, naturally.",
-      "blurb": "In a dusty repair shop where every machine has a story, two restorers find that some connections can only be made by hand.",
+      "id": "between-the-flags",
+      "title": "Between the Flags",
+      "theme": "Lifeguard romance, one body of water at a time",
+      "author": "Sandy Shores",
+      "authorBio": "Sandy Shores has guarded every kind of water there is — chlorinated, brackish, glacial, and artificially wave-generated. She has saved four hundred swimmers and, she'll admit, one or two hearts.",
+      "blurb": "Different water, same rescue. Across pools, lakes, oceans, and one very aggressive wave machine, love keeps pulling people back to the surface.",
       "books": [
-        { "title": "Sticky Keys", "description": "Her grandfather's Smith-Corona hadn't typed a word in forty years. The brooding repairman said it was hopeless. He was wrong about a lot of things.", "price": 4.99 },
-        { "title": "Ribbon & Ink", "description": "A rare Hermes 3000 brings two rival restorers into the same cramped workshop. The platen isn't the only thing that gets a workout.", "price": 5.99 },
-        { "title": "Carriage Return", "description": "The finale. When the vintage typewriter expo comes to town, a decades-old feud between two repair dynasties finally reaches its margin.", "price": 6.99 }
+        { "title": "The Deep End", "description": "Book one: the pool. The stern head guard runs the tightest municipal aquatic center in the state — until a reckless new hire dives straight past every rule she's got.", "price": 4.99 },
+        { "title": "Still Waters", "description": "Book two: the lake. Beneath a calm summer surface, an old rivalry and a slow current pull two camp lifeguards toward the same dock.", "price": 5.99 },
+        { "title": "Riptide", "description": "Book three: the ocean. On a treacherous stretch of coast, a burned-out veteran guard and a fearless rookie learn that the strongest pull isn't the tide.", "price": 5.99 },
+        { "title": "The Wave Pool", "description": "The finale: the wave pool. At the world's largest indoor water park, artificial swells throw two very real hearts together, every ninety seconds, on the dot.", "price": 6.99 }
       ]
     },
     {
-      "id": "perfect-game-imperfect-heart",
-      "title": "Perfect Game, Imperfect Heart",
-      "theme": "Professional bowling romance",
-      "author": "Rip Sparepin",
-      "authorBio": "Rip Sparepin rolled a sanctioned 300 at nineteen and has been chasing a bigger high ever since. He found it, he says, in the tenth frame of the human heart.",
-      "blurb": "On the pro bowling tour, where a single pin can end a career, two competitors discover that love is the only strike that counts.",
+      "id": "not-a-minute-late",
+      "title": "Not a Minute Late",
+      "theme": "Punctuality-fetish romance",
+      "author": "Dot Sharpe",
+      "authorBio": "Dot Sharpe has never been late to anything, including her own book launches, which begin at the stroke of the hour whether or not anyone has arrived. She finds tardiness unbearable and precision intoxicating.",
+      "blurb": "For a rare few, nothing quickens the pulse like a train that departs exactly on time. This is a love story for people who arrive early — and finish on schedule.",
       "books": [
-        { "title": "The Seven-Ten Split", "description": "She left him standing in the tenth frame of the championship. Two years later, they're paired in the doubles bracket. Some splits are impossible to convert — or are they?", "price": 4.99 },
-        { "title": "Pocket", "description": "He hits the pocket every time — except when she's watching from the concourse. A romance that lives and dies by the pin count.", "price": 5.99 },
-        { "title": "The Perfect Game", "description": "The finale. Twelve strikes to immortality, and the only person in the building who could distract him is sitting in lane one. Bring your own rosin bag.", "price": 6.99 }
+        { "title": "On the Dot", "description": "He arrived for their first date four minutes early and she nearly swooned on the spot. A slow-burn romance timed to the second.", "price": 4.99 },
+        { "title": "Synchronized", "description": "Two watches, one heartbeat. When their calendars align perfectly for the first time, the tension becomes almost too much to schedule.", "price": 5.99 },
+        { "title": "Right on Time", "description": "The finale. At the grand reopening of the world's most accurate clock, two sticklers discover that the best moment to say 'I love you' is precisely now.", "price": 6.99 }
       ]
     },
     {

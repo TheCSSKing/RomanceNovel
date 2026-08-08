@@ -1,10 +1,10 @@
-# Swoon & Sons, Publishers — Build Notes
+# Ravish House — Build Notes
 
 Parody romance publishing house. Static site served from `index.html`.
 
 ## Concept
-- **Publisher:** Swoon & Sons, Publishers
-- **Tagline:** Purveyors of Fine Improbable Passions Since 1987
+- **Publisher:** Ravish House (renamed from "Swoon & Sons" per review — punchier)
+- **Tagline:** Love, in the unlikeliest places.
 - Each **series** has one ultra-specific theme, a single author, and N books.
 - Each **book** has a title, short description, price, and (eventually) a generated cover.
 
@@ -17,18 +17,23 @@ Parody romance publishing house. Static site served from `index.html`.
 - [ ] Full bookstore site (browse + "purchase")
 
 ## Series (12)
-1. **Actuarial romance** — "Love by the Numbers" — author Prudence Everdeath
-2. **Submarine romance** — "Fathoms of the Heart" — author Marina Deeps
-3. **Competitive cheese-making romance** — "The Rind & the Reckless" — author Colby Jack Sterling
-4. **Antarctic research-station romance** — "Below Zero, Above Reason" — author Dr. Ptarmigan Frost
-5. **Municipal zoning-board romance** — "Variance of the Heart" — author Reginald P. Setback
-6. **Competitive dog-grooming romance** — "Clipped & Smitten" — author Bianca Fluffington
-7. **Volcanology romance** — "Magma Rising" — author Ignatia Cinders
-8. **Medieval falconry romance** — "Under His Hood" — author Lady Merlin de Jesses
-9. **Artisanal typewriter-repair romance** — "Return of the Carriage" — author Quentin Underwood
-10. **Professional bowling romance** — "Perfect Game, Imperfect Heart" — author Rip Sparepin
-11. **Beekeeping romance** — "The Sweetest Sting" — author Melissa Comb
-12. **Forensic accounting romance** — "Cooking the Books" — author Miles Ledger
+1. **Actuarial romance** — "Love by the Numbers" — Prudence Everdeath (4)
+2. **Submarine romance** — "Fathoms of the Heart" — Marina Deeps (3)
+3. **Competitive cheese-making romance** — "The Rind & the Reckless" — Colby Jack Sterling (5)
+4. **Antarctic research-station romance** — "Below Zero, Above Reason" — Dr. Ptarmigan Frost (3)
+5. **Aggressively zero-waste romance** — "Leave No Trace" — Fern Compostella (3)
+6. **Nihilist romance** — "Nothing Matters" — Søren Blank (4)
+7. **Volcanology romance** — "Magma Rising" — Ignatia Cinders (4)
+8. **Doomsday-prepper romance** — "Bunker Down" — Dakota Ridge (4)
+9. **Lifeguard (per body of water) romance** — "Between the Flags" — Sandy Shores (4)
+10. **Punctuality-fetish romance** — "Not a Minute Late" — Dot Sharpe (3)
+11. **Beekeeping romance** — "The Sweetest Sting" — Melissa Comb (3)
+12. **Forensic accounting romance** — "Cooking the Books" — Miles Ledger (3)
+
+Total: 12 series, 44 books.
 
 ## Log
 - Init: empty repo, created notes + data model.
+- Review round 1: renamed publisher to **Ravish House**; replaced series 5, 6, 8, 9, 10
+  (zoning, dog grooming, falconry, typewriter repair, bowling) with values/lifestyle/
+  common-theme/fetish themes per feedback.
