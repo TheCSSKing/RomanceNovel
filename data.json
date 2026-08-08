@@ -1,0 +1,170 @@
+{
+  "publisher": {
+    "name": "Swoon & Sons, Publishers",
+    "tagline": "Purveyors of Fine Improbable Passions Since 1987",
+    "about": "For nearly four decades, Swoon & Sons has proudly proved that love finds a way — even in the most statistically improbable, mechanically obscure, and professionally niche corners of human endeavor. Our authors write what they know, whether that is reinsurance treaties or the correct pH for a washed-rind cheese. Every heart in our catalog beats against a backdrop no other publisher would dare."
+  },
+  "series": [
+    {
+      "id": "love-by-the-numbers",
+      "title": "Love by the Numbers",
+      "theme": "Actuarial romance",
+      "author": "Prudence Everdeath",
+      "authorBio": "Prudence Everdeath, FSA, spent nineteen years pricing catastrophe reinsurance before discovering that the greatest risk of all is the human heart. She lives in Hartford with two cats, both fully indemnified.",
+      "blurb": "In the high-stakes world of long-term liability, two actuaries discover that some probabilities are worth betting your whole life on.",
+      "books": [
+        { "title": "Present Value", "description": "When Diana models his mortality curve, she never expects the discount rate of her own heart to plummet. A slow-burn romance across three quarterly board meetings.", "price": 4.99 },
+        { "title": "Confidence Interval", "description": "He was 95% certain he'd never love again. She was the outlier that broke the model. A tale of two analysts and one very significant p-value.", "price": 4.99 },
+        { "title": "The Deductible", "description": "Some things you can't insure against. Like the way he says 'mortality table.' A steamy office romance with full actuarial rigor.", "price": 5.99 },
+        { "title": "Terminal Dividend", "description": "The series finale. As the pension fund matures, so does a love thirty years in the making. Bring tissues and a financial calculator.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "fathoms-of-the-heart",
+      "title": "Fathoms of the Heart",
+      "theme": "Submarine romance",
+      "author": "Marina Deeps",
+      "authorBio": "Marina Deeps served eleven years aboard nuclear submarines and now writes from a windowless room by choice. She insists it helps her concentrate.",
+      "blurb": "Two hundred meters down, in a steel tube where no one can hear you sigh, the pressure to fall in love becomes unbearable.",
+      "books": [
+        { "title": "Silent Running", "description": "Rule one of the silent service: no sudden movements. Rule two: do not fall for the sonar officer. Commander Hale is about to break both.", "price": 4.99 },
+        { "title": "Crush Depth", "description": "The deeper they dive, the harder his heart pounds. When the hull groans, so does her resolve. A romance under unimaginable pressure.", "price": 5.99 },
+        { "title": "Periscope Up", "description": "After six months submerged, she surfaces to find the one thing she can't leave below. A tender reunion novel with authentic ballast.", "price": 5.99 }
+      ]
+    },
+    {
+      "id": "rind-and-the-reckless",
+      "title": "The Rind & the Reckless",
+      "theme": "Competitive cheese-making romance",
+      "author": "Colby Jack Sterling",
+      "authorBio": "Colby Jack Sterling is a three-time regional affineur of the year and a lifelong believer that the way to anyone's heart is a properly aged Gruyère.",
+      "blurb": "In the cutthroat world of artisanal cheese competition, two rival makers discover that love, like a good Camembert, cannot be rushed.",
+      "books": [
+        { "title": "The Washed Rind", "description": "Her Époisses was disqualified for being too seductive. His raw-milk cheddar has never lost. Sparks fly at the National Curd Championships.", "price": 4.99 },
+        { "title": "Aged to Perfection", "description": "Eighteen months in the cave changes a cheese. And a man. A second-chance romance with notes of hay, hazelnut, and heartbreak.", "price": 5.99 },
+        { "title": "Say Cheese", "description": "The wedding-cheese-cake commission of a lifetime forces two rivals into one very small aging room. Things get warm. And funky.", "price": 5.99 },
+        { "title": "Reserve", "description": "The finale. As their signature blend takes gold, they finally admit what everyone at the co-op already knew.", "price": 6.99 },
+        { "title": "The Whey Home", "description": "A holiday novella. Snowed in at the creamery on Christmas Eve, with only a wheel of Stilton and each other for warmth.", "price": 3.99 }
+      ]
+    },
+    {
+      "id": "below-zero-above-reason",
+      "title": "Below Zero, Above Reason",
+      "theme": "Antarctic research-station romance",
+      "author": "Dr. Ptarmigan Frost",
+      "authorBio": "Dr. Ptarmigan Frost overwintered at McMurdo four times before deciding the only thing colder than the continent was her ex. She writes to stay warm.",
+      "blurb": "Six months of darkness. Fourteen scientists. One thermostat war that becomes something much, much hotter.",
+      "books": [
+        { "title": "The Long Night", "description": "When the sun sets for the winter, the station's glaciologist and its cranky HVAC engineer discover the only heat source that matters.", "price": 4.99 },
+        { "title": "Core Sample", "description": "Two miles of ancient ice hold secrets. So does the man in the next Quonset hut. A romance drilled from the deep past.", "price": 5.99 },
+        { "title": "Windchill", "description": "The finale. As the resupply plane finally lands, she must choose between the mainland and the man who kept her warm at minus sixty.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "variance-of-the-heart",
+      "title": "Variance of the Heart",
+      "theme": "Municipal zoning-board romance",
+      "author": "Reginald P. Setback",
+      "authorBio": "Reginald P. Setback served twenty-two years on the Planning & Zoning Commission of a mid-sized municipality. He has never missed a public comment period, and he never will.",
+      "blurb": "Public hearings run late. Passions run later. In the fluorescent glow of the municipal annex, love applies for a permit.",
+      "books": [
+        { "title": "Setback Requirements", "description": "She wants a variance for her mixed-use development. He's the commissioner who keeps saying no. A slow-burn romance with a 45-day comment period.", "price": 4.99 },
+        { "title": "Grandfathered In", "description": "Their love was non-conforming from the start. Now the ordinance has changed. Can an old flame be brought up to code?", "price": 5.99 },
+        { "title": "The Public Hearing", "description": "The finale. Everything comes to a head at the biggest rezoning vote in county history. Motion to approve — the heart.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "clipped-and-smitten",
+      "title": "Clipped & Smitten",
+      "theme": "Competitive dog-grooming romance",
+      "author": "Bianca Fluffington",
+      "authorBio": "Bianca Fluffington has taken Best in Show at grooming championships on three continents. Her poodles have their own agents. She writes between competitions, usually smelling faintly of finishing spray.",
+      "blurb": "In the glittering, hairspray-choked arena of championship dog grooming, two stylists learn that the best cut of all is the one that opens your heart.",
+      "books": [
+        { "title": "Best in Show", "description": "Her continental poodle clip is flawless. His Asian fusion styling is the talk of the circuit. At the national finals, only one can win — but maybe both can lose their hearts.", "price": 4.99 },
+        { "title": "The Finishing Spray", "description": "One canister. Two rivals. A backstage romance that gets stickier by the minute. Includes a shocking scissor-work betrayal.", "price": 5.99 },
+        { "title": "Groomed for Love", "description": "The finale. As the ribbons are handed out, a decade-long rivalry finally gives way to something softer than a freshly blown-out coat.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "magma-rising",
+      "title": "Magma Rising",
+      "theme": "Volcanology romance",
+      "author": "Ignatia Cinders",
+      "authorBio": "Ignatia Cinders has stood at the rim of more active calderas than she can count. She measures love, like lava, in viscosity and inevitability.",
+      "blurb": "She reads the mountain's every tremor. He reads her. When the volcano finally blows, so does every ounce of restraint between them.",
+      "books": [
+        { "title": "Pyroclastic", "description": "The evacuation order came at dawn. The confession came at the summit. A fast-moving romance you cannot outrun.", "price": 4.99 },
+        { "title": "The Lava Tube", "description": "Trapped underground as the eruption begins, two rival geologists have only their headlamps and their undeniable chemistry.", "price": 5.99 },
+        { "title": "Dormant No More", "description": "He'd been quiet for years. Then she recalibrated his seismometer — and everything else. A reawakening in four parts.", "price": 5.99 },
+        { "title": "Effusive", "description": "The finale. As the mountain finally settles, their love overflows its banks. Endorsed by no actual geological survey.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "under-his-hood",
+      "title": "Under His Hood",
+      "theme": "Medieval falconry romance",
+      "author": "Lady Merlin de Jesses",
+      "authorBio": "Lady Merlin de Jesses is a master falconer and reenactor who has never once broken character during a book signing. Do not approach her gauntlet uninvited.",
+      "blurb": "In a windswept castle mews, a lowborn austringer and a highborn lady discover a bond as fierce and untamable as the birds they fly.",
+      "books": [
+        { "title": "The Jesses", "description": "He taught her to fly a goshawk. She taught him that some hearts refuse the hood. A forbidden romance across the class divide.", "price": 4.99 },
+        { "title": "Cast Off the Fist", "description": "When the king's peregrine goes missing, two falconers must ride together through the borderlands — and toward each other.", "price": 5.99 },
+        { "title": "Manned", "description": "To 'man' a hawk is to earn its trust through patience. She would spend a hundred nights doing the same for him.", "price": 5.99 },
+        { "title": "Bated Breath", "description": "The finale. As the great autumn hunt approaches, a secret betrothal threatens to clip their wings forever.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "return-of-the-carriage",
+      "title": "Return of the Carriage",
+      "theme": "Artisanal typewriter-repair romance",
+      "author": "Quentin Underwood",
+      "authorBio": "Quentin Underwood restores manual typewriters in a shop that smells of oil and ribbon ink. He wrote every one of these books on a 1948 Royal Quiet De Luxe, naturally.",
+      "blurb": "In a dusty repair shop where every machine has a story, two restorers find that some connections can only be made by hand.",
+      "books": [
+        { "title": "Sticky Keys", "description": "Her grandfather's Smith-Corona hadn't typed a word in forty years. The brooding repairman said it was hopeless. He was wrong about a lot of things.", "price": 4.99 },
+        { "title": "Ribbon & Ink", "description": "A rare Hermes 3000 brings two rival restorers into the same cramped workshop. The platen isn't the only thing that gets a workout.", "price": 5.99 },
+        { "title": "Carriage Return", "description": "The finale. When the vintage typewriter expo comes to town, a decades-old feud between two repair dynasties finally reaches its margin.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "perfect-game-imperfect-heart",
+      "title": "Perfect Game, Imperfect Heart",
+      "theme": "Professional bowling romance",
+      "author": "Rip Sparepin",
+      "authorBio": "Rip Sparepin rolled a sanctioned 300 at nineteen and has been chasing a bigger high ever since. He found it, he says, in the tenth frame of the human heart.",
+      "blurb": "On the pro bowling tour, where a single pin can end a career, two competitors discover that love is the only strike that counts.",
+      "books": [
+        { "title": "The Seven-Ten Split", "description": "She left him standing in the tenth frame of the championship. Two years later, they're paired in the doubles bracket. Some splits are impossible to convert — or are they?", "price": 4.99 },
+        { "title": "Pocket", "description": "He hits the pocket every time — except when she's watching from the concourse. A romance that lives and dies by the pin count.", "price": 5.99 },
+        { "title": "The Perfect Game", "description": "The finale. Twelve strikes to immortality, and the only person in the building who could distract him is sitting in lane one. Bring your own rosin bag.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "sweetest-sting",
+      "title": "The Sweetest Sting",
+      "theme": "Beekeeping romance",
+      "author": "Melissa Comb",
+      "authorBio": "Melissa Comb keeps forty hives and has been stung more times than she can count, though she maintains that none hurt quite like the first time she saw him in a veil.",
+      "blurb": "Where the hum of the hive fills the summer air, two apiarists learn that the sweetest things in life are the ones worth a little sting.",
+      "books": [
+        { "title": "Smoke & Honey", "description": "Her queen absconded the same week the handsome new beekeeper moved in next door. Coincidence? The bees seem to think not.", "price": 4.99 },
+        { "title": "The Swarm", "description": "When ten thousand bees settle in the wrong tree, two rival keepers must work as one. Suits come off eventually. Metaphorically. Mostly.", "price": 5.99 },
+        { "title": "Requeened", "description": "The finale. As the honey harvest comes in golden and heavy, a heart long thought colony-collapsed finally finds its queen.", "price": 6.99 }
+      ]
+    },
+    {
+      "id": "cooking-the-books",
+      "title": "Cooking the Books",
+      "theme": "Forensic accounting romance",
+      "author": "Miles Ledger",
+      "authorBio": "Miles Ledger, CPA, CFE, has traced more shell companies than he's had hot dinners. He maintains that a well-reconciled ledger is the most romantic document ever devised.",
+      "blurb": "Where the numbers don't add up, two forensic accountants follow the money — straight into each other's arms.",
+      "books": [
+        { "title": "Material Misstatement", "description": "She flagged the discrepancy. He signed off on the audit. Now they're locked in a conference room until one of them confesses — to the fraud, and to everything else.", "price": 4.99 },
+        { "title": "Off the Books", "description": "A midnight deposition, a missing $4 million, and two investigators who can't stop crossing lines. Fully deductible passion.", "price": 5.99 },
+        { "title": "The Reconciliation", "description": "The finale. When the biggest embezzlement case of the decade goes to trial, two hearts finally balance to the penny.", "price": 6.99 }
+      ]
+    }
+  ]
+}
