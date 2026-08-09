@@ -11,10 +11,10 @@ Parody romance publishing house. Static site served from `index.html`.
 ## Plan / Progress
 - [x] Scaffold repo on branch `claude/parody-romance-bookstore-43uvbo`
 - [x] Author series + book data (`data.json`)
-- [ ] Minimal review site (name + series list) — FOR USER REVIEW FIRST
-- [ ] User approves
-- [ ] Generate cover images via OpenAI Images API (gpt-image-2)
-- [ ] Full bookstore site (browse + "purchase")
+- [x] Minimal review site (name + series list) — FOR USER REVIEW FIRST
+- [x] User approves
+- [x] Generate cover images via OpenAI Images API (gpt-image-2)
+- [x] Full bookstore site (browse + "purchase")
 
 ## Series (12)
 1. **Actuarial romance** — "Love by the Numbers" — Prudence Everdeath (4)
@@ -48,14 +48,13 @@ Total: 12 series, 43 books.
   with author bios, book modals, add-to-cart drawer w/ localStorage, fake checkout.
   Covers: real PNGs from `covers/<id>-<n>.png` when present, else themed CSS placeholder.
 
-## Cover image generation — BLOCKED
-- `scripts/gen_covers.py` is ready (gpt-image-2, size 1024x1536, quality=medium,
-  art-only prompts w/ per-series art direction; title/author overlaid by the site).
-- **BLOCKER:** this environment's egress policy denies `api.openai.com` — the agent
-  proxy returns HTTP 403 on CONNECT (policy denial, not a TLS/cert issue). Confirmed
-  via `curl $HTTPS_PROXY/__agentproxy/status` (recentRelayFailures: connect_rejected,
-  api.openai.com:443). Per proxy README, 403 = org egress policy; must be reported,
-  not worked around.
-- Options: (a) allowlist api.openai.com for this environment, then run
-  `OPENAI_API_KEY=... python3 scripts/gen_covers.py`; (b) run the generator locally
-  and commit the covers/ folder. Site auto-uses images once they land in covers/.
+## Cover image generation — DONE
+- `scripts/gen_covers.py` (gpt-image-2, size 1024x1536, quality=medium, art-only
+  prompts w/ per-series art direction; title/author overlaid by the site).
+- Egress to `api.openai.com` is now permitted; ran the generator with the
+  `OPENAI_API_KEY` environment variable and generated all **43 covers** into
+  `covers/<id>-<n>.png`. Each was reviewed individually before being committed.
+- Prompt hardening: added a tasteful/PG guard to the base style (one book tripped
+  the API's output-moderation filter with the original prompt), and made the
+  generator retry on HTTP 400 instead of aborting the whole run (only 401/403 stop it).
+- The site auto-uses the real PNGs; the themed CSS placeholder remains as a fallback.
