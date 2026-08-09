@@ -5,15 +5,17 @@ Ravish House catalog must contain and how each series must look. It exists
 because the first-pass covers were **art-only** (no title, author, series, or
 tagline) and every series shared one identical painterly-couple aesthetic.
 
-Covers are produced in two layers:
+Covers are generated in a **single pass** with OpenAI Images (`gpt-image-2`,
+portrait `1024×1536`, high quality). The prompt feeds the model both:
 
-1. **Artwork** — generated with OpenAI Images (`gpt-image-2`, portrait
-   `1024×1536`), using a *per-series* art direction (below). The art model is
-   told **not** to render any text.
-2. **Typography** — the title, series line, author, tagline, and publisher
-   mark are composited onto the art programmatically (Pillow) so they are
-   always crisp, correctly spelled, and consistently placed. The image model is
-   never trusted to spell words.
+1. **Art direction** — a *per-series* aesthetic (medium, palette, mood), and
+2. **Lettering direction** — a *per-series* typography style, plus the exact
+   text to render (title, series line, author, tagline, publisher).
+
+The image generator renders the artwork **and** all cover text together, so the
+type is integrated into the design. The prompt states each string in quotes and
+insists on exact spelling; every generated cover is reviewed for spelling and
+legibility before it is committed.
 
 ---
 
@@ -32,14 +34,13 @@ Every finished cover MUST carry, with this visual hierarchy:
 Layout & legibility rules:
 
 - **Format:** portrait, 2:3 aspect (`1024×1536`), matching the site's `.cover`.
-- **Safe zones:** the artwork must leave calm, uncluttered space near the **top**
-  (for the series eyebrow) and the **bottom** (for title / tagline / author).
-- **Legibility:** a soft, series-tinted gradient scrim sits behind the text
-  zones so text stays readable over any artwork; text gets a subtle shadow.
-- **No baked-in text in the artwork.** All words come from the typography layer.
-  No stray letters, logos, watermarks, or signatures in the art.
+- **Safe zones:** the artwork keeps calm, uncluttered space near the **top**
+  (for the series eyebrow) and the **bottom** (for title / tagline / author),
+  and keeps text clear of the couple's faces.
+- **Legibility & spelling:** all text must be sharp, correctly spelled, and
+  readable against the art. No stray, duplicate, or gibberish text anywhere.
 - **Order top→bottom:** series eyebrow (top) · … artwork … · title, tagline,
-  author, publisher (stacked at the bottom).
+  author, publisher (toward the bottom).
 - **Taste:** PG, tender-not-explicit, fully clothed (unchanged from before).
 
 ---
@@ -251,9 +252,12 @@ also stored on each book in `data.json` as `tagline`.)
 
 ## 4. Production notes
 
-- Art direction + typography specs live in `scripts/gen_covers.py` (`SERIES`
+- Art direction + lettering direction live in `scripts/gen_covers.py` (`SERIES`
   table); taglines live in `data.json`. This doc is the human-readable contract.
-- Fonts are bundled under `assets/fonts/` (all SIL Open Font License) so covers
-  are reproducible without external font hosts.
-- Regenerate one series at a time: `python3 scripts/gen_covers.py --only <id>`.
-- Every regenerated cover is reviewed individually before it is committed.
+- The **image generator renders all text** — no font overlays. The font names in
+  the per-series "Type" notes above are *style references* for the lettering
+  look requested in the prompt, not bundled assets.
+- Regenerate one series at a time: `python3 scripts/gen_covers.py --only <id>`
+  (`--force` to overwrite existing). Add `-N` to target a single book.
+- Every regenerated cover is reviewed individually — spelling and legibility
+  included — before it is committed.
