@@ -37,6 +37,12 @@ Total: 12 series, 43 books.
 - Review round 1: renamed publisher to **Ravish House**; replaced series 5, 6, 8, 9, 10
   (zoning, dog grooming, falconry, typewriter repair, bowling) with values/lifestyle/
   common-theme/fetish themes per feedback.
+- Content pass: rewrote every book description in `data.json` into full coherent
+  story summaries (~100-135 words each, up from ~25-40) — named leads, a central
+  conflict/stakes, and the absurd series premise pushed harder; light continuity
+  where a finale caps a series (e.g. Diana & Julian, Willa & Beau, Rhea & Mateo).
+  Re-reviewed all 43 titles; kept the tight thematic puns (Reduce/Reuse/Recycle,
+  Crush Depth, Pyroclastic, etc.) as an intentional device. Rebuilt index.html.
 - Built full bookstore: `scripts/build_site.py` generates `index.html` from `data.json`
   (catalog inlined so it works from file:// too). Features: series grid, series pages
   with author bios, book modals, add-to-cart drawer w/ localStorage, fake checkout.
