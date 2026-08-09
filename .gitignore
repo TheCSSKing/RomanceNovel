@@ -1,3 +1,6 @@
 # python
 *.pyc
 __pycache__/
+
+# generated cover source art (finals are committed, raw art is not)
+covers/.raw/
