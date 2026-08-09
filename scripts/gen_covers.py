@@ -44,8 +44,10 @@ SERIES_ART = {
 }
 
 STYLE = ("Mass-market paperback ROMANCE NOVEL cover illustration, painterly and glossy, "
-         "lush dramatic lighting, highly emotional and slightly over-the-top, "
+         "lush dramatic lighting, emotional and slightly over-the-top, "
          "attractive couple as the focal point, cinematic composition, portrait orientation. "
+         "Keep it tasteful and wholesome: PG-rated, fully and modestly clothed, "
+         "a tender romantic embrace rather than anything explicit or suggestive. "
          "IMPORTANT: absolutely NO text, NO title, NO letters, NO words, NO numbers, "
          "NO logos, NO watermark, NO signature anywhere in the image — artwork only, "
          "leave calm uncluttered space near the top and bottom for a title to be added later.")
@@ -118,8 +120,11 @@ def main():
             except urllib.error.HTTPError as e:
                 msg = e.read().decode()[:400]
                 print(f"[err ] {fid} HTTP {e.code}: {msg}")
-                if e.code in (400, 401, 403):
+                if e.code in (401, 403):
+                    # auth / permission problems won't fix themselves — stop.
                     sys.exit(1)
+                # 400 (e.g. output-moderation rejection) is often transient with
+                # image models; back off and retry, then move on to the next job.
                 time.sleep(2 ** attempt)
             except Exception as e:
                 print(f"[err ] {fid} {e}")
