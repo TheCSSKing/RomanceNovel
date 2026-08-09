@@ -41,15 +41,28 @@ Layout & legibility rules:
   readable against the art. No stray, duplicate, or gibberish text anywhere.
 - **Order top→bottom:** series eyebrow (top) · … artwork … · title, tagline,
   author, publisher (toward the bottom).
-- **Taste:** PG, tender-not-explicit, fully clothed (unchanged from before).
+
+**Art tone (all covers) — over-the-top clinch.** These are gloriously melodramatic
+bodice-ripper covers. Every cover shows a passionate couple **entangled in a
+dramatic "clinch"** — bodies pressed together, all over each other — with **lots
+of bare skin**: a shirtless, muscular hero and the heroine in a flowing
+off-the-shoulder gown; bare shoulders, arms, and backs. Sensual, swooning, and
+theatrical. Keep it in the **mainstream romance-genre register: steamy but not
+explicit** — no nudity, no exposed genitals, no sex acts; a passionate embrace
+only. (This taste line replaces the earlier "tender / fully clothed" rule.)
 
 ---
 
 ## 2. Per-series art direction
 
 The central complaint was "they all look the same." Each series therefore gets
-a **distinct medium, palette, mood, and typographic identity**. The subject may
-still feature the couple, but the *style* must read as a different imprint.
+a **distinct medium, palette, mood, typographic identity, AND set** — a
+different *scene and staging*, not just a different text layout on the same
+"couple standing in a landscape" template. Vary the **clinch staging** too:
+pinned against a bulkhead, lifted off the floor, tangled across a desk, dripping
+on the sand — no two series should repeat the same pose or set. The couple is
+always the focus (see the over-the-top clinch rule above); the *set* and *style*
+are what make each series read as a different imprint.
 
 ### 1. Love by the Numbers — *Actuarial* — Prudence Everdeath
 - **Aesthetic:** Clean modern corporate minimalism. Contemporary flat-leaning
