@@ -146,7 +146,9 @@ TEMPLATE = r"""<!doctype html>
   .modal{background:var(--card);border-radius:14px;max-width:760px;width:100%;
     box-shadow:var(--shadow);max-height:90vh;overflow:auto;}
   .modal .row{display:flex;gap:1.4rem;padding:1.5rem;}
-  .modal .row .mcover{flex:0 0 200px;max-width:200px;}
+  .modal .row .mcover{flex:0 0 200px;max-width:200px;cursor:zoom-in;}
+  .modal .mcap{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;
+    letter-spacing:.3px;}
   .modal .row .minfo{flex:1;min-width:0;}
   .modal h3{margin:.1rem 0 .2rem;font-size:1.6rem;}
   .modal .sub{color:var(--accent);font-style:italic;}
@@ -154,6 +156,15 @@ TEMPLATE = r"""<!doctype html>
   .modal .desc{margin:.9rem 0;font-size:1.02rem;line-height:1.65;}
   .modal .price{font-size:1.4rem;color:var(--accent);font-weight:bold;}
   .x{float:right;font-size:1.4rem;cursor:pointer;color:var(--muted);padding:.6rem 1rem 0;}
+
+  /* Fullscreen cover lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(8,6,4,.97);z-index:300;display:none;
+    align-items:center;justify-content:center;padding:1rem;cursor:zoom-out;}
+  .lightbox.show{display:flex;}
+  .lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+    border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.6);}
+  .lightbox .lx{position:fixed;top:.5rem;right:.9rem;color:#fff;font-size:2.2rem;line-height:1;
+    cursor:pointer;opacity:.9;text-shadow:0 2px 8px rgba(0,0,0,.6);}
 
   /* Cart drawer */
   .drawer-bg{position:fixed;inset:0;background:rgba(30,20,12,.45);z-index:110;display:none;}
@@ -203,7 +214,7 @@ TEMPLATE = r"""<!doctype html>
     .modal-bg{padding:0;align-items:stretch;}
     .modal{max-width:none;width:100%;border-radius:0;max-height:100vh;min-height:100vh;}
     .modal .row{flex-direction:column;gap:1rem;padding:1.15rem 1.15rem 2rem;}
-    .modal .row .mcover{flex:0 0 auto;max-width:160px;margin:.2rem auto 0;}
+    .modal .row .mcover{flex:0 0 auto;max-width:min(72vw,260px);margin:.2rem auto 0;}
     .modal h3{font-size:1.5rem;}
     .modal .desc{font-size:1.07rem;line-height:1.72;}
     .x{font-size:1.7rem;padding:.5rem .9rem 0;}
@@ -253,6 +264,12 @@ TEMPLATE = r"""<!doctype html>
 </aside>
 
 <div class="toast" id="toast"></div>
+
+<!-- Fullscreen cover lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lx" onclick="closeLightbox()">&times;</span>
+  <img id="lightboxImg" src="" alt="Cover">
+</div>
 
 <script id="catalog" type="application/json">__CATALOG_JSON__</script>
 <script>
@@ -344,7 +361,9 @@ function openBook(sid,n){
   document.getElementById('modal').innerHTML = `
     <span class="x" onclick="closeModal()">&times;</span>
     <div class="row">
-      <div class="mcover">${coverHTML(s,b)}</div>
+      <div class="mcover" onclick="openLightbox('${b.cover}')" title="View larger">
+        ${coverHTML(s,b)}<div class="mcap">Tap to enlarge</div>
+      </div>
       <div class="minfo">
         <div class="sub">${esc(s.title)} · ${esc(s.theme)}</div>
         <h3>${esc(b.title)}</h3>
@@ -358,6 +377,14 @@ function openBook(sid,n){
   document.getElementById('modalBg').classList.add('show');
 }
 function closeModal(){document.getElementById('modalBg').classList.remove('show');}
+
+/* ---------- fullscreen cover lightbox ---------- */
+function openLightbox(src){
+  const lb=document.getElementById('lightbox'), im=document.getElementById('lightboxImg');
+  im.onerror=closeLightbox;           // no real cover image -> just skip
+  im.src=src; lb.classList.add('show');
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('show');}
 
 /* ---------- cart ---------- */
 let cart = load();
@@ -409,7 +436,7 @@ function render(){
   window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',render);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeModal();closeCart();}});
 render();renderCart();
 </script>
 </body>
