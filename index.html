@@ -104,10 +104,12 @@
   .modal{background:var(--card);border-radius:14px;max-width:760px;width:100%;
     box-shadow:var(--shadow);max-height:90vh;overflow:auto;}
   .modal .row{display:flex;gap:1.4rem;padding:1.5rem;}
-  .modal .row .cover{flex:0 0 200px;max-width:200px;}
+  .modal .row .mcover{flex:0 0 200px;max-width:200px;}
+  .modal .row .minfo{flex:1;min-width:0;}
   .modal h3{margin:.1rem 0 .2rem;font-size:1.6rem;}
   .modal .sub{color:var(--accent);font-style:italic;}
-  .modal .desc{margin:.9rem 0;}
+  .modal .tag{margin:.5rem 0 .2rem;font-style:italic;color:var(--gold);font-size:1.05rem;}
+  .modal .desc{margin:.9rem 0;font-size:1.02rem;line-height:1.65;}
   .modal .price{font-size:1.4rem;color:var(--accent);font-weight:bold;}
   .x{float:right;font-size:1.4rem;cursor:pointer;color:var(--muted);padding:.6rem 1rem 0;}
 
@@ -140,6 +142,30 @@
   footer.site{border-top:1px solid var(--line);color:var(--muted);text-align:center;
     padding:2rem 1rem;font-size:.85rem;}
   .disclaimer{max-width:640px;margin:.6rem auto 0;font-size:.78rem;opacity:.8;}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:640px){
+    .bar{flex-wrap:wrap;gap:.5rem;padding:.65rem 1rem;}
+    .brand b{font-size:1.3rem;}
+    nav.top{gap:1rem;margin-left:auto;}
+    .hero{padding:1.8rem 1rem .4rem;}
+    .hero h1{font-size:1.95rem;}
+    .hero p{font-size:1rem;}
+    main{padding:1rem 1rem 3rem;}
+    .section-title{font-size:1.3rem;}
+    .book-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1.1rem;}
+    .series-hero .inner{padding:1.4rem 1.15rem;}
+    .series-hero h2{font-size:1.65rem;}
+    .series-hero .emoji{font-size:2.4rem;}
+    /* book modal becomes a full-screen, single-column reading sheet */
+    .modal-bg{padding:0;align-items:stretch;}
+    .modal{max-width:none;width:100%;border-radius:0;max-height:100vh;min-height:100vh;}
+    .modal .row{flex-direction:column;gap:1rem;padding:1.15rem 1.15rem 2rem;}
+    .modal .row .mcover{flex:0 0 auto;max-width:160px;margin:.2rem auto 0;}
+    .modal h3{font-size:1.5rem;}
+    .modal .desc{font-size:1.07rem;line-height:1.72;}
+    .x{font-size:1.7rem;padding:.5rem .9rem 0;}
+  }
 </style>
 </head>
 <body>
@@ -276,11 +302,12 @@ function openBook(sid,n){
   document.getElementById('modal').innerHTML = `
     <span class="x" onclick="closeModal()">&times;</span>
     <div class="row">
-      <div style="flex:0 0 200px;max-width:200px">${coverHTML(s,b)}</div>
-      <div style="flex:1">
+      <div class="mcover">${coverHTML(s,b)}</div>
+      <div class="minfo">
         <div class="sub">${esc(s.title)} · ${esc(s.theme)}</div>
         <h3>${esc(b.title)}</h3>
         <div class="by" style="color:var(--muted)">by ${esc(s.author)}</div>
+        ${b.tagline?`<div class="tag">${esc(b.tagline)}</div>`:''}
         <div class="desc">${esc(b.description)}</div>
         <div class="price">${fmt(b.price)}</div>
         <button class="btn" onclick="addToCart('${sid}',${n});closeModal()">Add to Cart</button>
